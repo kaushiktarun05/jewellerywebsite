@@ -175,7 +175,7 @@
             <div class="row">
                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
                   <div class="contact">
-                     <form>
+                     <form  method="post" action="" name="ContactForm" id="ContactForm">
                         <div class="row">
                            <div class="col-sm-12">
                               <input class="contactus" placeholder="Name" type="text" name="Name">
@@ -329,6 +329,18 @@
       </footer>
       <!-- end footer -->
       <!-- Javascript files-->
+      <script>
+			const scriptURL = 'change this link '
+			const form = document.forms['ContactForm']
+		  
+			form.addEventListener('submit', e => {
+			  e.preventDefault()
+			  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+				.then(response => alert("Thank you! your form is submitted successfully." ))
+				.then(() => {  window.location.reload(); })
+				.catch(error => console.error('Error!', error.message))
+			})
+			</script>
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>
