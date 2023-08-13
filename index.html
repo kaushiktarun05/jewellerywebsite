@@ -183,19 +183,19 @@
             <div class="row">
                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
                   <div class="contact">
-                     <form  method="post" action="" name="ContactForm" id="ContactForm">
+                     <form action="https://sheetdb.io/api/v1/az3s9s1pbjl6t" method="post" name="ContactForm" id="sheetdb-form">
                         <div class="row">
                            <div class="col-sm-12">
-                              <input class="contactus" placeholder="Name" type="text" name="Name">
+                              <input class="contactus" placeholder="Name" type="text" name="data[Name]">
                            </div>
                            <div class="col-sm-12">
-                              <input class="contactus" placeholder="Phone Number" type="text" name="Phone Number">
+                              <input class="contactus" placeholder="Phone Number" type="text" name="data[PhoneNumber]">
                            </div>
                            <div class="col-sm-12">
-                              <input class="contactus" placeholder="Email" type="text" name="Email">
+                              <input class="contactus" placeholder="Email" type="text" name="data[Email]">
                            </div>
                            <div class="col-sm-12">
-                              <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
+                              <textarea class="textarea" placeholder="Message" type="text" name="data[Message]"></textarea>
                            </div>
                            <div class="col-sm-12">
                               <button class="send">Send</button>
@@ -286,8 +286,8 @@
                                     </div>
                                     <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 pa_rile">
                                        <div class="joe">
-                                          <h3>Joe Bhaiya</h3>
-                                          <p>Superb! The intricate details of the necklace I purchased from [Your Company Name] left me speechless. It's a true work of art that I'll treasure forever. </p>
+                                          <h3>Joe Smith</h3>
+                                          <p>Superb! The intricate details of the necklace I purchased from D.S jewellers left me speechless. It's a true work of art that I'll treasure forever. </p>
                                        </div>
                                     </div>
                                  </div>
@@ -337,19 +337,25 @@
       </footer>
       <!-- end footer -->
       <!-- Javascript files-->
-      <script>
-         <!-- Change the link to your google sheet deployment of App Scripts extention -->
-			const scriptURL = 'change this link '
-			const form = document.forms['ContactForm']
-		  
-			form.addEventListener('submit', e => {
-			  e.preventDefault()
-			  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-				.then(response => alert("Thank you! your form is submitted successfully." ))
+
+         <script>
+            var form = document.getElementById('sheetdb-form');
+           form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("sheetdb-form")),
+          }).then(
+              response => response.json()
+          ).then(response => alert("Thank you! your form is submitted successfully." ))
 				.then(() => {  window.location.reload(); })
 				.catch(error => console.error('Error!', error.message))
-			})
-			</script>
+            
+
+          });
+         </script>
+
+
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>
