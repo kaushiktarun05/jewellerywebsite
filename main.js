@@ -1,3 +1,4 @@
+//by @kaushiktarun05
 (function ($) {
   "use strict";
 
