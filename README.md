@@ -12,15 +12,6 @@ This repository contains the source code and assets for a jewelry website. The w
 - Learn about the brand's history, mission, and values.
 - Contact information and customer support details provided.
 
-## Technologies Used
-
-- HTML, CSS, JavaScript for front-end development.
-- [Bootstrap](https://getbootstrap.com/) for responsive and mobile-first design.
-- [React](https://reactjs.org/) for building dynamic user interfaces (if applicable).
-- [Node.js](https://nodejs.org/) and [Express](https://expressjs.com/) (if you have a backend for handling purchases and user data).
-- [MongoDB](https://www.mongodb.com/) or other database systems (if applicable).
-- [Stripe](https://stripe.com/) or other payment processing systems (if applicable).
-
 ## Installation
 
 1. Clone this repository: `git clone https://github.com/your-username/jewellerywebsite.git`
